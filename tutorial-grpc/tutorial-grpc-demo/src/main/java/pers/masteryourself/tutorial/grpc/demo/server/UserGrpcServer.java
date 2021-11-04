@@ -3,7 +3,6 @@ package pers.masteryourself.tutorial.grpc.demo.server;
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
 import lombok.extern.slf4j.Slf4j;
-import pers.masteryourself.tutorial.grpc.demo.service.UserServiceImpl;
 
 import java.util.concurrent.TimeUnit;
 

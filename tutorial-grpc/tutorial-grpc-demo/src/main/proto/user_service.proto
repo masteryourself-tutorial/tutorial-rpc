@@ -5,15 +5,27 @@ option java_multiple_files = true;
 
 import "user.proto";
 
-message UserServiceRequest {
-    int64 id = 1;
+service UserService {
+    // 添加用户
+    rpc add(UserAddRequest) returns (UserAddResponse) {}
+
+    // 根据用户名查找用户
+    rpc find(UserFindRequest) returns (stream UserFindResponse) {}
 }
 
-message UserServiceResponse {
+message UserAddRequest {
     User user = 1;
 }
 
-service UserService {
-    // 根据用户名查找用户
-    rpc findUserById (UserServiceRequest) returns (UserServiceResponse) {}
+message UserAddResponse {
+    int32 ret = 1;
+}
+
+message UserFindRequest {
+    int64 minId = 1;
+    int32 minAge = 2;
+}
+
+message UserFindResponse {
+    User user = 1;
 }
