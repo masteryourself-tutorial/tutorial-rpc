@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option java_package = "pers.masteryourself.tutorial.grpc.demo.service.proto";
+option java_multiple_files = true;
+
+import "user.proto";
+
+message UserServiceRequest {
+    int64 id = 1;
+}
+
+message UserServiceResponse {
+    User user = 1;
+}
+
+service UserService {
+    // 根据用户名查找用户
+    rpc findUserById (UserServiceRequest) returns (UserServiceResponse) {}
+}

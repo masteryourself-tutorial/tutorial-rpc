@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "pers.masteryourself.tutorial.grpc.demo.proto";
+option java_multiple_files = true;
+
+message User {
+    int64 id = 1;
+    string name = 2;
+    int32 age = 3;
+    bool sex = 4;
+}
